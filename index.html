@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/e19bcadf18.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlusW2HW</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+                <strong>Weather Report</strong>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title"><i class="far fa-snowflake"></i></h5>
+                <p class="card-text"><span id="tempToday">-7</span> <a href="#" id="cel">°C</a> | <a href="#" id="fahr">°F</a>
+                <br />
+                <span id="date">January 25, 2021</span>
+                </p>
+                <p class="city" id="currentCity">Seoul
+                <br />
+                </p>
+                <form id="searchCity">
+                    <div class="row g-3 align-self-center">
+                        <div class="col-4"></div>
+                        <div class="col-1">
+                            <label class="form-label">Change city:</label>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control" id="city-input" placeholder="Type city name">
+                        </div>
+                        <div class="col-1">
+                            <button type="submit" class="btn btn-success">Search</button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-outline-success" id="current-location">Current Location</button>
+                <div class="container t">
+                    <div class="card-body2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Wind</th>
+                                    <th scope="col">Humidity</th>
+                                    <th scope="col">Feels Like</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span id="wind">5</span> km/h</td>
+                                    <td><span id="humidity">81</span>%</td>
+                                    <td><span id="feelsLike">-8</span>°C</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-4">
+                <div class="row gx-5">
+                    <div class="col">
+                        <div class="p-3 border bg-light"><i class="far fa-snowflake"></i>
+                        <br />
+                        -5°C
+                        <br />
+                        Tuesday
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light"><i class="far fa-snowflake"></i>
+                        <br />
+                        -5°C
+                        <br />
+                        Wednesday
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light"><i class="fas fa-cloud"></i>
+                        <br />
+                        -2°C
+                        <br />
+                        Thursday
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light"><i class="fas fa-cloud-sun"></i>
+                        <br />
+                        0°C
+                        <br />
+                        Friday
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light"><i class="far fa-snowflake"></i>
+                        <br />
+                        -8°C
+                        <br />
+                        Saturday
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+</html>
