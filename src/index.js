@@ -39,6 +39,13 @@ function fahrenheit() {
 let fahrenheitButton = document.querySelector("#fahr");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
+function celcius() {
+  let tempNowC = document.querySelector("#tempToday");
+  tempNowC.innerHTML = (celciusValue);
+}
+let celciusButton = document.querySelector("#cel");
+celciusButton.addEventListener("click", celcius);
+
 function apiInput(city) {
   let apiKey = "8239c94054675b27ae1319054495506d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
