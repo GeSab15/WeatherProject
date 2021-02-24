@@ -33,18 +33,11 @@ if (minutes < 10) {
 
 function fahrenheit() {
   let tempNowF = document.querySelector("#tempToday");
-  let fahrConvert = (whatTemp * 9) / 5 + 32;
+  let fahrConvert = (celciusValue * 9) / 5 + 32;
   tempNowF.innerHTML = Math.round(fahrConvert);
 }
 let fahrenheitButton = document.querySelector("#fahr");
 fahrenheitButton.addEventListener("click", fahrenheit);
-
-function celcius() {
-  let tempNowC = document.querySelector("#tempToday");
-  tempNowC.innerHTML = whatTemp;
-}
-let celciusButton = document.querySelector("#cel");
-celciusButton.addEventListener("click", celcius);
 
 function apiInput(city) {
   let apiKey = "8239c94054675b27ae1319054495506d";
@@ -56,6 +49,8 @@ function apiInput(city) {
   axios.get(apiUrl).then(feelsLikeData);
   axios.get(apiUrl).then(emoji);
 }
+
+let celciusValue = null;
 
 function newCity(event) {
   event.preventDefault();
@@ -71,10 +66,10 @@ function newCity(event) {
 let newCityButton = document.querySelector("#searchCity");
 newCityButton.addEventListener("submit", newCity);
 
-apiInput("Seoul");
-
 function whatTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusValue = response.data.main.temp;
+
+  let temperature = Math.round(celciusValue);
   let temp = document.querySelector("#tempToday");
   temp.innerHTML = `${temperature}`;
 }
@@ -102,6 +97,8 @@ function emoji(response){
   let emoJi = document.querySelector("#icon");
   emoJi.setAttribute("src", `http://openweathermap.org/img/wn/${emojiNow}@2x.png`);
 }
+
+apiInput("Seoul");
 
 function currentLocation(response) {
   let currentLocation = response.data.name;
