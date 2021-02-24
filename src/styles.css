@@ -29,17 +29,50 @@ table {
   border-radius: 8px;
   background-color: rgba(185, 184, 184, 0.8);
   text-align: center;
-  margin: 70px 70px 70px 70px;
+  margin: 70px 70px 20px 70px;
+}
+.city {
+  font-size: 30px;
 }
 .card-body2 {
+  margin-top: 17px;
   text-align: center;
+}
+.heading {
+  font-size: 18px;
 }
 .p-3 {
   border-radius: 8px;
   margin: 10px;
 }
+.weatherForecast {
+  text-align: center;
+  margin: 0px 70px 20px 70px;
+}
+.insideForecast {
+  display: block;
+  border-radius: 8px;
+  background-color: rgba(185, 184, 184, 0.8);
+  text-align: center;
+  margin: 50px 20px 70px 18px;
+}
+.card-img-top {
+  width: 70px;
+}
 .link {
   font-size: small;
   text-align: center;
   margin-bottom: 100px;
+}
+#icon,
+#date {
+  font-size: 20px;
+  font-weight: normal;
+}
+#tempToday {
+  font-size: 37px;
+}
+#units {
+  position: relative;
+  top: -13px;
 }

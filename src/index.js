@@ -46,18 +46,37 @@ function celcius() {
 let celciusButton = document.querySelector("#cel");
 celciusButton.addEventListener("click", celcius);
 
+function formatHours(timestamp){
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10){
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 function dayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  forecastElement.innerHTML = `
-  <div class="col2">
-  <h2>0000H</h2>
-  <img src="" class="card-img-top">
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index <5; index++){
+  forecast = response.data.list[index];
+  forecastElement.innerHTML += `
+  <div class="col-2 insideForecast">
+  <p>${formatHours(forecast.dt * 1000)}</p>
+  <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" class="card-img-top"><br />
   <div class="weatherForecastTemp">
   <strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
   </div>
   </div>
   `;
+  }
 }
 
 function apiInput(city) {
@@ -142,6 +161,9 @@ function apiInputPT(position) {
   axios.get(apiUrlPT).then(feelsLikeData);
   axios.get(apiUrlPT).then(currentLocation);
   axios.get(apiUrlPT).then(emoji);
+
+  apiUrlPT = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlPT).then(dayForecast);
 }
 function currentLoc(event) {
   event.preventDefault();
