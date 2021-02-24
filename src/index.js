@@ -117,7 +117,7 @@ function apiInputPT(position) {
   axios.get(apiUrlPT).then(humidityData);
   axios.get(apiUrlPT).then(feelsLikeData);
   axios.get(apiUrlPT).then(currentLocation);
-  axios.get(apiUrl).then(emoji);
+  axios.get(apiUrlPT).then(emoji);
 }
 function currentLoc(event) {
   event.preventDefault();
