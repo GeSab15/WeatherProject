@@ -46,13 +46,15 @@ function celcius() {
 let celciusButton = document.querySelector("#cel");
 celciusButton.addEventListener("click", celcius);
 
-function dayForecast() {
+function dayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.main[0];
   forecastElement.innerHTML = `
   <div class="col2">
   <h2>0000H</h2>
   <img src="" class="card-img-top">
   <div class="weatherForecastTemp">
+  <strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
   </div>
   </div>
   `;
