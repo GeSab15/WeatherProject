@@ -47,17 +47,16 @@ let celciusButton = document.querySelector("#cel");
 celciusButton.addEventListener("click", celcius);
 
 function dayForecast(response) {
-  let forecastOne = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  forecastOne.innerHTML = `
-    <div class="col"><img src="http://openweathermap.org/img/wn/${forecast.data.weather[0].icon}@2x.png">
-      <div class="p-3 border bg-light">
-      <br />
-      <strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
-      <br />
-      0000H
-      </div>
-    </div>`
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.main[0];
+  forecastElement.innerHTML = `
+  <div class="card" style="width: 10rem;">
+  <img src="" class="card-img-top" >
+  <div class="card-body">
+    <p class="card-text"><strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
+  </div>
+  </div>
+  `;
 }
 
 function apiInput(city) {
