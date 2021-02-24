@@ -53,6 +53,7 @@ function apiInput(city) {
   axios.get(apiUrl).then(windData);
   axios.get(apiUrl).then(humidityData);
   axios.get(apiUrl).then(feelsLikeData);
+  axios.get(apiUrl).then(emoji);
 }
 
 function newCity(event) {
@@ -91,6 +92,12 @@ function feelsLikeData(response) {
   let feels = Math.round(response.data.main.feels_like);
   let fl = document.querySelector("#feelsLike");
   fl.innerHTML = `${feels}`;
+}
+
+function emoji(response){
+  let emojiNow = response.data.weather[0].icon;
+  let emoJi = document.querySelector("#icon");
+  emoJi.setAttribute("src", `http://openweathermap.org/img/wn/${emojiNow}@2x.png`);
 }
 
 function currentLocation(response) {
