@@ -70,6 +70,8 @@ function newCity(event) {
 let newCityButton = document.querySelector("#searchCity");
 newCityButton.addEventListener("submit", newCity);
 
+apiInput("Seoul");
+
 function whatTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let temp = document.querySelector("#tempToday");
