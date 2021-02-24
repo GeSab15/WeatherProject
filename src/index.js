@@ -33,14 +33,15 @@ if (minutes < 10) {
 
 function fahrenheit() {
   let tempNowF = document.querySelector("#tempToday");
-  tempNowF.innerHTML = "19.4";
+  let fahrConvert = (whatTemp.value * 9) / 5 + 32;
+  tempNowF.innerHTML = Math.round(fahrConvert);
 }
 let fahrenheitButton = document.querySelector("#fahr");
 fahrenheitButton.addEventListener("click", fahrenheit);
 
 function celcius() {
   let tempNowC = document.querySelector("#tempToday");
-  tempNowC.innerHTML = "-7";
+  tempNowC.innerHTML = whatTemp.value;
 }
 let celciusButton = document.querySelector("#cel");
 celciusButton.addEventListener("click", celcius);
