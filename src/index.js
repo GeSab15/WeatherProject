@@ -50,10 +50,11 @@ function dayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.main[0];
   forecastElement.innerHTML = `
-  <div class="card" style="width: 10rem;">
-  <img src="" class="card-img-top" >
-  <div class="card-body">
-    <p class="card-text"><strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
+  <div class="col2">
+  <h2>0000H</h2>
+  <img src="" class="card-img-top">
+  <div class="weatherForecastTemp">
+    <strong>${Math.round(forecast.main.temp_max)}°C Max</strong> | ${Math.round(forecast.main.temp_min)}°C Min
   </div>
   </div>
   `;
