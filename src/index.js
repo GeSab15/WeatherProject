@@ -162,7 +162,7 @@ function apiInputPT(position) {
   axios.get(apiUrlPT).then(currentLocation);
   axios.get(apiUrlPT).then(emoji);
 
-  apiUrlPT = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  apiUrlPT = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlPT).then(dayForecast);
 }
 function currentLoc(event) {
